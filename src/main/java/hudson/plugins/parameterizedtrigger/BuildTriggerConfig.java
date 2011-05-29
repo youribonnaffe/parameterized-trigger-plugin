@@ -87,6 +87,7 @@ public class BuildTriggerConfig implements Describable<BuildTriggerConfig> {
             // expand variables if applicable
             StringBuilder projectNames = new StringBuilder();
             StringTokenizer tokens = new StringTokenizer(projects,",");
+            StringTokenizer tokens = new StringTokenizer(projects,",\r\n");
             while(tokens.hasMoreTokens()) {
                 if(projectNames.length() > 0) {
                     projectNames.append(',');
@@ -193,6 +194,7 @@ public class BuildTriggerConfig implements Describable<BuildTriggerConfig> {
     public boolean onJobRenamed(String oldName, String newName) {
             boolean changed = false;
             String[] list = projects.split(",");
+            String[] list = projects.split(",\r\n");
             for (int i = 0; i < list.length; i++) {
                 if (list[i].trim().equals(oldName)) {
                     list[i] = newName;

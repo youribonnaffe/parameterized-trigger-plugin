@@ -24,6 +24,7 @@ THE SOFTWARE.
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
   <f:entry title="${%Projects to build}" field="projects">
     <f:textbox />
+    <f:expandableTextbox />
   </f:entry>
   <!-- TODO: replace with <f:optionalProperty> -->
   <f:optionalBlock field="block" title="${%Block until the triggered projects finish their builds}" checked="${instance.block!=null}">
